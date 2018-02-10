@@ -9,9 +9,8 @@ app = Flask(__name__)
 
 @app.route('/',methods=['POST'])
 def foo():
-	print request.data
 	data = json.loads(request.data)
-	print data
+	print data['data']['id']
 	return "OK"
 
 if __name__ == '__main__':
