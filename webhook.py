@@ -11,6 +11,7 @@ app = Flask(__name__)
 def foo():
 	data = json.loads(request.data)
 	print data['data']['id']
+	print get_message(data['data']['id'])['text']
 	return "OK"
 
 if __name__ == '__main__':
