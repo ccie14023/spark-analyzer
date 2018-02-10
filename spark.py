@@ -120,6 +120,25 @@ def post_message(message_text, room_id, token):
 
 	return resp
 
+def get_message(room_id, msg_id, token):
+
+	"""
+	Lists all of the messages in a Spark room.  Right now this is limited to 50
+	messages.  Need to fix this.
+	Takes a room_id and token.
+	Returns a JSON-encoded list of messages.
+	"""
+
+	requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+	headers = {'Authorization':'Bearer '+token,
+				'Content-Type':'application/json'}
+
+	resp = requests.get('https://api.ciscospark.com/v1/messages{}'.format(msg_id),
+						verify=False,headers=headers)
+
+	return resp
+
 def post_message_with_image(message_text, img_url, room_id, token):
 
 	"""
