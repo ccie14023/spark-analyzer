@@ -134,7 +134,7 @@ def get_message(msg_id, token):
 	headers = {'Authorization':'Bearer '+token,
 				'Content-Type':'application/json'}
 
-	resp = requests.get('https://api.ciscospark.com/v1/messages{}'.format(msg_id),
+	resp = requests.get('https://api.ciscospark.com/v1/messages/{}'.format(msg_id),
 						verify=False,headers=headers)
 
 	return resp
