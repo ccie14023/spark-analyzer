@@ -120,7 +120,7 @@ def post_message(message_text, room_id, token):
 
 	return resp
 
-def get_message(room_id, msg_id, token):
+def get_message(msg_id, token):
 
 	"""
 	Lists all of the messages in a Spark room.  Right now this is limited to 50
