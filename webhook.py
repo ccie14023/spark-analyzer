@@ -23,6 +23,7 @@ def put_txt(data):
 
 	f = open("messages","a")
 	f.write(data)
+	f.write('\n')
 	f.close()
 
 if __name__ == '__main__':
