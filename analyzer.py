@@ -16,7 +16,7 @@ def make_cloud(text):
 if __name__ == "__main__":
 	
 	f = open("messages","r")
-	text = f.read()
+	text = f.read().encode("ascii","ignore")
 	f.close()
 
 	os.remove("wc.png")
