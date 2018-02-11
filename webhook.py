@@ -9,11 +9,21 @@ app = Flask(__name__)
 @app.route('/',methods=['POST'])
 def foo():
 	data = json.loads(request.data)
+	msg_txt = parse_data(data)
+	put_txt(msg_txt)
+	return "OK"
+
+def parse_data(data):
 	new_msg_id = data['data']['id']
 	resp = get_message(data['data']['id'], token)
 	new_msg_d = json.loads(resp.text)
-	print new_msg_d['text']
-	return "OK"
+	return new_msg_d['text']
+
+def put_txt(data):
+
+	f = open("messages","a")
+	f.write(data)
+	f.close()
 
 if __name__ == '__main__':
 	
