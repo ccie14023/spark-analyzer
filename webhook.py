@@ -10,7 +10,7 @@ app = Flask(__name__)
 def foo():
 	data = json.loads(request.data)
 	print data['data']['id']
-	print get_message(data['data']['id'], BOT_TOKEN)['text']
+	print get_message(data['data']['id'], token)['text']
 	return "OK"
 
 if __name__ == '__main__':
