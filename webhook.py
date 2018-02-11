@@ -16,7 +16,7 @@ def foo():
 if __name__ == '__main__':
 	
 	f = open("token","r")
-	token = f.read()
+	token = f.read()[:-1]
 	f.close()
 
 	room_id = get_room_id(ROOM_NAME, token)
