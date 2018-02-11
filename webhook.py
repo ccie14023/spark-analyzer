@@ -2,7 +2,6 @@ from flask import Flask, request
 import json
 from spark import *
 
-BOT_TOKEN = "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OLzlhZjRmNDllLTNmYTQtNDA0Yy04ZWRjLTYxZWEzMDMyYmJjYw"
 ROOM_NAME = "Webhook Test"
 
 app = Flask(__name__)
@@ -16,6 +15,10 @@ def foo():
 
 if __name__ == '__main__':
 	
-	room_id = get_room_id(ROOM_NAME, BOT_TOKEN)
+	f = open("token","r")
+	token = f.read()
+	f.close()
+
+	room_id = get_room_id(ROOM_NAME, token)
 
 	app.run(host="0.0.0.0")
