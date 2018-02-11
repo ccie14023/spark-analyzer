@@ -22,7 +22,7 @@ def parse_data(data):
 def put_txt(data):
 
 	f = open("messages","a")
-	f.write(data)
+	f.write(data.encode("ascii","ignore"))
 	f.write('\n')
 	f.close()
 
